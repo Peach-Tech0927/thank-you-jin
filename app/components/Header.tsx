@@ -1,6 +1,6 @@
 import { AppBar, Toolbar, Typography } from "@mui/material";
 
-export default function Header() {
+const Header = () => {
   return (
     <AppBar color="inherit" position="static">
       <Toolbar>
@@ -16,4 +16,6 @@ export default function Header() {
       </Toolbar>
     </AppBar>
   );
-}
+};
+
+export default Header;
