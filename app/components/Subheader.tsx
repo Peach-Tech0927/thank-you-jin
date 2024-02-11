@@ -12,13 +12,13 @@ const Subheader = () => {
         backgroundSize: "cover",
       }}
     >
-      <Box height={"100%"} sx={{ background: "rgba(255, 255, 255, 0.65) " }}>
+      <Box height={"100%"} sx={{ background: "rgba(255, 255, 255, 0.65)" }}>
         <Box
           display={"flex"}
           flexDirection={"column"}
+          justifyContent={"center"}
           alignItems={"center"}
           height={"100%"}
-          paddingY={19}
         >
           <Typography fontSize={{ xs: 25, md: 35 }}>
             エンジニアのための就活対策
