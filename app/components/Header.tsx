@@ -7,9 +7,9 @@ const Header = () => {
         <Typography
           component="h1"
           m={"0 auto"}
-          color={"#DE7897"}
+          color={"#0068b7"}
           fontSize={20}
-          fontFamily={"emoji"}
+          fontFamily={"Hiragino Sans"}
         >
           エンジニア就活対策
         </Typography>
