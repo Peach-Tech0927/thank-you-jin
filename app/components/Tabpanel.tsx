@@ -14,7 +14,7 @@ const CustomTabPanel = (props: TabPanelProps) => {
   return (
     <div role="tabpanel" hidden={value !== index} {...other}>
       {value === index && (
-        <Box sx={{ p: 3 }}>
+        <Box p={3}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -48,11 +48,11 @@ const BasicTabs = () => {
             },
           }}
         >
-          <StyledFirstTab label="one" />
-          <StyledSecondTab label="two" />
-          <StyledThirdTab label="three" />
-          <StyledFourthTab label="four" />
-          <StyledFifthTab label="five" />
+          <StyledFirstTab sx={{ width: "150px" }} label="one" />
+          <StyledSecondTab sx={{ width: "150px" }} label="two" />
+          <StyledThirdTab sx={{ width: "150px" }} label="three" />
+          <StyledFourthTab sx={{ width: "150px" }} label="four" />
+          <StyledFifthTab sx={{ width: "150px" }} label="five" />
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
@@ -75,103 +75,78 @@ const BasicTabs = () => {
 };
 
 const StyledFirstTab = styled(Tab)(({ theme }) => ({
+  fontFamily: "revert-layer",
+  color: "#575757",
+  [theme.breakpoints.down("sm")]: {
+    width: "70px",
+  },
+  [theme.breakpoints.down("md")]: {
+    width: "105px",
+  },
   "&.Mui-selected": {
     color: "#DE7897",
     borderBottom: "2px solid #DE7897",
   },
-
-  [theme.breakpoints.down("sm")]: {
-    width: "70px",
-  },
-  [theme.breakpoints.up("sm")]: {
-    width: "105px",
-  },
-  [theme.breakpoints.up("md")]: {
-    width: "150px",
-  },
-
-  fontFamily: "revert-layer",
-  color: "#575757",
 }));
 
 const StyledSecondTab = styled(Tab)(({ theme }) => ({
+  fontFamily: "revert-layer",
+  color: "#575757",
+  [theme.breakpoints.down("sm")]: {
+    width: "70px",
+  },
+  [theme.breakpoints.down("md")]: {
+    width: "105px",
+  },
   "&.Mui-selected": {
     color: "#8161DE",
     borderBottom: "2px solid #8161DE",
   },
-
-  [theme.breakpoints.down("sm")]: {
-    width: "70px",
-  },
-  [theme.breakpoints.up("sm")]: {
-    width: "105px",
-  },
-  [theme.breakpoints.up("md")]: {
-    width: "150px",
-  },
-
-  fontFamily: "revert-layer",
-  color: "#575757",
 }));
 
 const StyledThirdTab = styled(Tab)(({ theme }) => ({
+  fontFamily: "revert-layer",
+  color: "#575757",
+  [theme.breakpoints.down("sm")]: {
+    width: "70px",
+  },
+  [theme.breakpoints.down("md")]: {
+    width: "105px",
+  },
   "&.Mui-selected": {
     color: "#2AA6CD",
     borderBottom: "2px solid #2AA6CD",
   },
-
-  [theme.breakpoints.down("sm")]: {
-    width: "70px",
-  },
-  [theme.breakpoints.up("sm")]: {
-    width: "105px",
-  },
-  [theme.breakpoints.up("md")]: {
-    width: "150px",
-  },
-
-  fontFamily: "revert-layer",
-  color: "#575757",
 }));
 
 const StyledFourthTab = styled(Tab)(({ theme }) => ({
+  fontFamily: "revert-layer",
+  color: "#575757",
+  [theme.breakpoints.down("sm")]: {
+    width: "70px",
+  },
+  [theme.breakpoints.down("md")]: {
+    width: "105px",
+  },
   "&.Mui-selected": {
     color: "#F2821A",
     borderBottom: "2px solid #F2821A",
   },
-
-  [theme.breakpoints.down("sm")]: {
-    width: "70px",
-  },
-  [theme.breakpoints.up("sm")]: {
-    width: "105px",
-  },
-  [theme.breakpoints.up("md")]: {
-    width: "150px",
-  },
-
-  fontFamily: "revert-layer",
-  color: "#575757",
 }));
 
 const StyledFifthTab = styled(Tab)(({ theme }) => ({
+  fontFamily: "revert-layer",
+  color: "#575757",
+  [theme.breakpoints.down("sm")]: {
+    width: "70px",
+  },
+  [theme.breakpoints.down("md")]: {
+    width: "105px",
+  },
   "&.Mui-selected": {
     color: "#1CC033",
     borderBottom: "2px solid #1CC033",
   },
-
-  [theme.breakpoints.down("sm")]: {
-    width: "70px",
-  },
-  [theme.breakpoints.up("sm")]: {
-    width: "105px",
-  },
-  [theme.breakpoints.up("md")]: {
-    width: "150px",
-  },
-
-  fontFamily: "revert-layer",
-  color: "#575757",
 }));
 
 export default BasicTabs;
