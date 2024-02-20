@@ -48,11 +48,11 @@ const BasicTabs = () => {
             },
           }}
         >
-          <StyledFirstTab sx={{ width: "150px" }} label="one" />
-          <StyledSecondTab sx={{ width: "150px" }} label="two" />
-          <StyledThirdTab sx={{ width: "150px" }} label="three" />
-          <StyledFourthTab sx={{ width: "150px" }} label="four" />
-          <StyledFifthTab sx={{ width: "150px" }} label="five" />
+          <StyledTab label="one" color="#DE7897" />
+          <StyledTab label="two" color="#8161DE" />
+          <StyledTab label="three" color="#2AA6CD" />
+          <StyledTab label="four" color="#F2821A" />
+          <StyledTab label="five" color="#1CC033" />
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
@@ -74,24 +74,14 @@ const BasicTabs = () => {
   );
 };
 
-const StyledFirstTab = styled(Tab)(({ theme }) => ({
+//別ファイルでStyledTabをコンポーネントとして切り出したが、Mui-selectedが機能しなかったためshouldForwardPropを使用
+const StyledTab = styled(Tab, {
+  shouldForwardProp: (prop) => prop !== "color",
+})(({ theme, color }) => ({
   fontFamily: "revert-layer",
   color: "#575757",
-  [theme.breakpoints.down("sm")]: {
-    width: "70px",
-  },
-  [theme.breakpoints.down("md")]: {
-    width: "105px",
-  },
-  "&.Mui-selected": {
-    color: "#DE7897",
-    borderBottom: "2px solid #DE7897",
-  },
-}));
+  width: "150px",
 
-const StyledSecondTab = styled(Tab)(({ theme }) => ({
-  fontFamily: "revert-layer",
-  color: "#575757",
   [theme.breakpoints.down("sm")]: {
     width: "70px",
   },
@@ -99,53 +89,8 @@ const StyledSecondTab = styled(Tab)(({ theme }) => ({
     width: "105px",
   },
   "&.Mui-selected": {
-    color: "#8161DE",
-    borderBottom: "2px solid #8161DE",
-  },
-}));
-
-const StyledThirdTab = styled(Tab)(({ theme }) => ({
-  fontFamily: "revert-layer",
-  color: "#575757",
-  [theme.breakpoints.down("sm")]: {
-    width: "70px",
-  },
-  [theme.breakpoints.down("md")]: {
-    width: "105px",
-  },
-  "&.Mui-selected": {
-    color: "#2AA6CD",
-    borderBottom: "2px solid #2AA6CD",
-  },
-}));
-
-const StyledFourthTab = styled(Tab)(({ theme }) => ({
-  fontFamily: "revert-layer",
-  color: "#575757",
-  [theme.breakpoints.down("sm")]: {
-    width: "70px",
-  },
-  [theme.breakpoints.down("md")]: {
-    width: "105px",
-  },
-  "&.Mui-selected": {
-    color: "#F2821A",
-    borderBottom: "2px solid #F2821A",
-  },
-}));
-
-const StyledFifthTab = styled(Tab)(({ theme }) => ({
-  fontFamily: "revert-layer",
-  color: "#575757",
-  [theme.breakpoints.down("sm")]: {
-    width: "70px",
-  },
-  [theme.breakpoints.down("md")]: {
-    width: "105px",
-  },
-  "&.Mui-selected": {
-    color: "#1CC033",
-    borderBottom: "2px solid #1CC033",
+    color: color,
+    borderBottom: `2px solid ${color}`,
   },
 }));
 
