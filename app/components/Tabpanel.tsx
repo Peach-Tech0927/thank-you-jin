@@ -82,12 +82,13 @@ const StyledTab = styled(Tab, {
   color: "#575757",
   width: "150px",
 
-  [theme.breakpoints.down("sm")]: {
-    width: "70px",
-  },
   [theme.breakpoints.down("md")]: {
     width: "105px",
   },
+  [theme.breakpoints.down("sm")]: {
+    width: "70px",
+  },
+
   "&.Mui-selected": {
     color: color,
     borderBottom: `2px solid ${color}`,
