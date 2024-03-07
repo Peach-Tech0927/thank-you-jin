@@ -1,6 +1,8 @@
 "use client";
-import { Box, Typography, Tabs, Tab, styled } from "@mui/material";
+import { Box, Typography, Tabs, Tab, styled, Grid } from "@mui/material";
 import * as React from "react";
+import { messages } from "../lib/data";
+import Image from "next/image";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -13,12 +15,8 @@ const CustomTabPanel = (props: TabPanelProps) => {
 
   return (
     <div role="tabpanel" hidden={value !== index} {...other}>
-      {value === index && (
-        <Box p={3}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
+      {value === index && <Box p={3}>{children}</Box>}
+    </div> // div in p 解消のためにchildrenが囲われていた<typograpy>を削除
   );
 };
 
@@ -48,27 +46,150 @@ const BasicTabs = () => {
             },
           }}
         >
-          <StyledTab label="one" color="#DE7897" />
-          <StyledTab label="two" color="#8161DE" />
-          <StyledTab label="three" color="#2AA6CD" />
-          <StyledTab label="four" color="#F2821A" />
-          <StyledTab label="five" color="#1CC033" />
+          <StyledTab label="一覧" color="#DE7897" />
+          <StyledTab label="24卒" color="#8161DE" />
+          <StyledTab label="25卒" color="#2AA6CD" />
+          <StyledTab label="26卒" color="#F2821A" />
+          <StyledTab label="27卒" color="#1CC033" />
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-        Item One
+        <Grid container spacing={5} p={"2%"}>
+          {messages.map((message, index) => (
+            <Grid
+              key={index}
+              item
+              xs={12}
+              md={6}
+              display={"flex"}
+              alignItems={"center"}
+              justifyContent={"center"}
+            >
+              <Box mx={{ xs: 1, sm: 4 }} mt={1} bgcolor={"#D7EEFF"} width={500}>
+                <Box
+                  px={{ xs: 3, sm: 5 }}
+                  py={{ xs: 2, sm: 4 }}
+                  fontSize={{ xs: "13px", sm: "16px" }}
+                >
+                  <Typography marginBottom={1}>{message.name}</Typography>
+                  <Typography>{message.message}</Typography>
+                </Box>
+              </Box>
+            </Grid>
+          ))}
+        </Grid>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        Item Two
+        <Grid container spacing={5} p={"2%"}>
+          {messages
+            .filter((company) => company.year === "24卒")
+            .map((message, index) => (
+              <Grid
+                key={index}
+                item
+                xs={12}
+                md={6}
+                display={"flex"}
+                alignItems={"center"}
+                justifyContent={"center"}
+              >
+                <Box mx={{ xs: 1, sm: 4 }} mt={1} bgcolor={"#D7EEFF"}>
+                  <Box
+                    px={{ xs: 3, sm: 5 }}
+                    py={{ xs: 2, sm: 4 }}
+                    fontSize={{ xs: "13px", sm: "16px" }}
+                  >
+                    <Typography marginBottom={1}>{message.name}</Typography>
+                    <Typography>{message.message}</Typography>
+                  </Box>
+                </Box>
+              </Grid>
+            ))}
+        </Grid>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        Item Three
+        <Grid container spacing={5} p={"2%"}>
+          {messages
+            .filter((company) => company.year === "25卒")
+            .map((message, index) => (
+              <Grid
+                key={index}
+                item
+                xs={12}
+                md={6}
+                display={"flex"}
+                alignItems={"center"}
+                justifyContent={"center"}
+              >
+                <Box mx={{ xs: 1, sm: 4 }} mt={1} bgcolor={"#D7EEFF"}>
+                  <Box
+                    px={{ xs: 3, sm: 5 }}
+                    py={{ xs: 2, sm: 4 }}
+                    fontSize={{ xs: "13px", sm: "16px" }}
+                  >
+                    <Typography marginBottom={1}>{message.name}</Typography>
+                    <Typography>{message.message}</Typography>
+                  </Box>
+                </Box>
+              </Grid>
+            ))}
+        </Grid>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={3}>
-        Item Four
+        <Grid container spacing={5} p={"2%"}>
+          {messages
+            .filter((company) => company.year === "26卒")
+            .map((message, index) => (
+              <Grid
+                key={index}
+                item
+                xs={12}
+                md={6}
+                display={"flex"}
+                alignItems={"center"}
+                justifyContent={"center"}
+              >
+                <Box mx={{ xs: 1, sm: 4 }} mt={1} bgcolor={"#D7EEFF"}>
+                  <Box
+                    px={{ xs: 3, sm: 5 }}
+                    py={{ xs: 2, sm: 4 }}
+                    fontSize={{ xs: "13px", sm: "16px" }}
+                  >
+                    <Typography marginBottom={1}>{message.name}</Typography>
+                    <Typography>{message.message}</Typography>
+                  </Box>
+                </Box>
+              </Grid>
+            ))}
+        </Grid>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={4}>
-        Item Five
+        <Grid container spacing={5} p={"2%"}>
+          {messages
+            .filter((company) => company.year === "27卒")
+            .map((message, index) => (
+              <Grid
+                key={index}
+                item
+                xs={12}
+                md={6}
+                display={"flex"}
+                alignItems={"center"}
+                justifyContent={"center"}
+              >
+                <Box mx={{ xs: 1, sm: 4 }} mt={1} bgcolor={"#D7EEFF"}>
+                  <Box
+                    px={{ xs: 3, sm: 5 }}
+                    py={{ xs: 2, sm: 4 }}
+                    fontSize={{ xs: "13px", sm: "16px" }}
+                  >
+                    <Typography marginBottom={1}>{message.name}</Typography>
+                    <Typography>{message.message}</Typography>
+                  </Box>
+                </Box>
+              </Grid>
+            ))}
+        </Grid>
       </CustomTabPanel>
     </Box>
   );
