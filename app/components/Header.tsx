@@ -7,11 +7,11 @@ const Header = () => {
         <Typography
           component="h1"
           m={"0 auto"}
-          color={"#0068b7"}
-          fontSize={20}
-          fontFamily={"Hiragino Sans"}
+          color={"#DE7897"}
+          fontSize={33}
+          fontFamily={"serif"}
         >
-          エンジニア就活対策
+          Graduation Anniversary
         </Typography>
       </Toolbar>
     </AppBar>

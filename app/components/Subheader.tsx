@@ -5,7 +5,7 @@ const Subheader = () => {
     <Box
       height={"70vh"}
       sx={{
-        backgroundImage: `url("/image/engineer-03.jpg")`,
+        backgroundImage: `url("/image/members.jpg")`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         backgroundSize: "cover",
@@ -19,11 +19,9 @@ const Subheader = () => {
           alignItems={"center"}
           height={"100%"}
         >
+          <Typography fontSize={{ xs: 25, md: 35 }}>ジンさん</Typography>
           <Typography fontSize={{ xs: 25, md: 35 }}>
-            エンジニアのための就活対策
-          </Typography>
-          <Typography fontSize={{ xs: 25, md: 35 }}>
-            エンジニアのための就活対策
+            ご卒業おめでとうございます！！
           </Typography>
         </Box>
       </Box>
