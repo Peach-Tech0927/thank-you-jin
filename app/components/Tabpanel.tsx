@@ -2,7 +2,8 @@
 import { Box, Typography, Tabs, Tab, styled, Grid } from "@mui/material";
 import * as React from "react";
 import { messages } from "../lib/data";
-import Image from "next/image";
+import GridCard from "./GridCard";
+import YearGridCard from "./YearGridCard";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -54,142 +55,19 @@ const BasicTabs = () => {
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-        <Grid container spacing={5} p={"2%"}>
-          {messages.map((message, index) => (
-            <Grid
-              key={index}
-              item
-              xs={12}
-              md={6}
-              display={"flex"}
-              alignItems={"center"}
-              justifyContent={"center"}
-            >
-              <Box mx={{ xs: 1, sm: 4 }} mt={1} bgcolor={"#D7EEFF"} width={500}>
-                <Box
-                  px={{ xs: 3, sm: 5 }}
-                  py={{ xs: 2, sm: 4 }}
-                  fontSize={{ xs: "13px", sm: "16px" }}
-                >
-                  <Typography marginBottom={1}>{message.name}</Typography>
-                  <Typography>{message.message}</Typography>
-                </Box>
-              </Box>
-            </Grid>
-          ))}
-        </Grid>
+        <GridCard />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        <Grid container spacing={5} p={"2%"}>
-          {messages
-            .filter((company) => company.year === "24卒")
-            .map((message, index) => (
-              <Grid
-                key={index}
-                item
-                xs={12}
-                md={6}
-                display={"flex"}
-                alignItems={"center"}
-                justifyContent={"center"}
-              >
-                <Box mx={{ xs: 1, sm: 4 }} mt={1} bgcolor={"#D7EEFF"}>
-                  <Box
-                    px={{ xs: 3, sm: 5 }}
-                    py={{ xs: 2, sm: 4 }}
-                    fontSize={{ xs: "13px", sm: "16px" }}
-                  >
-                    <Typography marginBottom={1}>{message.name}</Typography>
-                    <Typography>{message.message}</Typography>
-                  </Box>
-                </Box>
-              </Grid>
-            ))}
-        </Grid>
+        <YearGridCard yearProps="24卒" cardColor={"#E7DAF8"} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        <Grid container spacing={5} p={"2%"}>
-          {messages
-            .filter((company) => company.year === "25卒")
-            .map((message, index) => (
-              <Grid
-                key={index}
-                item
-                xs={12}
-                md={6}
-                display={"flex"}
-                alignItems={"center"}
-                justifyContent={"center"}
-              >
-                <Box mx={{ xs: 1, sm: 4 }} mt={1} bgcolor={"#D7EEFF"}>
-                  <Box
-                    px={{ xs: 3, sm: 5 }}
-                    py={{ xs: 2, sm: 4 }}
-                    fontSize={{ xs: "13px", sm: "16px" }}
-                  >
-                    <Typography marginBottom={1}>{message.name}</Typography>
-                    <Typography>{message.message}</Typography>
-                  </Box>
-                </Box>
-              </Grid>
-            ))}
-        </Grid>
+        <YearGridCard yearProps="25卒" cardColor={"#D7EEFF"} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={3}>
-        <Grid container spacing={5} p={"2%"}>
-          {messages
-            .filter((company) => company.year === "26卒")
-            .map((message, index) => (
-              <Grid
-                key={index}
-                item
-                xs={12}
-                md={6}
-                display={"flex"}
-                alignItems={"center"}
-                justifyContent={"center"}
-              >
-                <Box mx={{ xs: 1, sm: 4 }} mt={1} bgcolor={"#D7EEFF"}>
-                  <Box
-                    px={{ xs: 3, sm: 5 }}
-                    py={{ xs: 2, sm: 4 }}
-                    fontSize={{ xs: "13px", sm: "16px" }}
-                  >
-                    <Typography marginBottom={1}>{message.name}</Typography>
-                    <Typography>{message.message}</Typography>
-                  </Box>
-                </Box>
-              </Grid>
-            ))}
-        </Grid>
+        <YearGridCard yearProps="26卒" cardColor={"#F7D2BE"} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={4}>
-        <Grid container spacing={5} p={"2%"}>
-          {messages
-            .filter((company) => company.year === "27卒")
-            .map((message, index) => (
-              <Grid
-                key={index}
-                item
-                xs={12}
-                md={6}
-                display={"flex"}
-                alignItems={"center"}
-                justifyContent={"center"}
-              >
-                <Box mx={{ xs: 1, sm: 4 }} mt={1} bgcolor={"#D7EEFF"}>
-                  <Box
-                    px={{ xs: 3, sm: 5 }}
-                    py={{ xs: 2, sm: 4 }}
-                    fontSize={{ xs: "13px", sm: "16px" }}
-                  >
-                    <Typography marginBottom={1}>{message.name}</Typography>
-                    <Typography>{message.message}</Typography>
-                  </Box>
-                </Box>
-              </Grid>
-            ))}
-        </Grid>
+        <YearGridCard yearProps="27卒" cardColor={"#D4EDD9"} />
       </CustomTabPanel>
     </Box>
   );
