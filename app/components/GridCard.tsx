@@ -4,7 +4,12 @@ import { messages } from "../lib/data";
 
 const GridCard = () => {
   return (
-    <Grid container spacing={5} py={3} px={10}>
+    <Grid
+      container
+      spacing={{ xs: 4, sm: 5 }}
+      py={{ xs: 2, sm: 3 }}
+      px={{ xs: 1, sm: 10 }}
+    >
       {messages.map((message, index) => (
         <Grid
           key={index}

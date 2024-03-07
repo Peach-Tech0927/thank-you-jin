@@ -9,7 +9,12 @@ type TProps = {
 
 const YearGridCard: React.FC<TProps> = ({ yearProps, cardColor }) => {
   return (
-    <Grid container spacing={5} py={3} px={10}>
+    <Grid
+      container
+      spacing={{ xs: 4, sm: 5 }}
+      py={{ xs: 2, sm: 3 }}
+      px={{ xs: 1, sm: 10 }}
+    >
       {messages
         .filter((message) => yearProps === message.year)
         .map((message, index) => (
