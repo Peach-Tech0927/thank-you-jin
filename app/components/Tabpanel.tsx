@@ -1,6 +1,8 @@
 "use client";
-import { Box, Typography, Tabs, Tab, styled } from "@mui/material";
-import * as React from "react";
+import { Box, Tabs, Tab, styled } from "@mui/material";
+import GridCard from "./GridCard";
+import YearGridCard from "./YearGridCard";
+import React from "react";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -13,12 +15,8 @@ const CustomTabPanel = (props: TabPanelProps) => {
 
   return (
     <div role="tabpanel" hidden={value !== index} {...other}>
-      {value === index && (
-        <Box p={3}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
+      {value === index && <Box p={3}>{children}</Box>}
+    </div> // div in p 解消のためにchildrenが囲われていた<typograpy>を削除
   );
 };
 
@@ -48,27 +46,27 @@ const BasicTabs = () => {
             },
           }}
         >
-          <StyledTab label="one" color="#DE7897" />
-          <StyledTab label="two" color="#8161DE" />
-          <StyledTab label="three" color="#2AA6CD" />
-          <StyledTab label="four" color="#F2821A" />
-          <StyledTab label="five" color="#1CC033" />
+          <StyledTab label="一覧" color="#DE7897" />
+          <StyledTab label="24卒" color="#8161DE" />
+          <StyledTab label="25卒" color="#2AA6CD" />
+          <StyledTab label="26卒" color="#F2821A" />
+          <StyledTab label="27卒" color="#1CC033" />
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-        Item One
+        <GridCard />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        Item Two
+        <YearGridCard yearProps="24卒" cardColor={"#E7DAF8"} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        Item Three
+        <YearGridCard yearProps="25卒" cardColor={"#D7EEFF"} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={3}>
-        Item Four
+        <YearGridCard yearProps="26卒" cardColor={"#F7D2BE"} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={4}>
-        Item Five
+        <YearGridCard yearProps="27卒" cardColor={"#D4EDD9"} />
       </CustomTabPanel>
     </Box>
   );
