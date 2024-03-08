@@ -1,7 +1,6 @@
 "use client";
-import { Box, Typography, Tabs, Tab, styled, Grid } from "@mui/material";
+import { Box, Tabs, Tab, styled } from "@mui/material";
 import * as React from "react";
-import { messages } from "../lib/data";
 import GridCard from "./GridCard";
 import YearGridCard from "./YearGridCard";
 

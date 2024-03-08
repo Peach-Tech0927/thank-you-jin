@@ -1,6 +1,6 @@
 import { Grid, Box, Typography } from "@mui/material";
 import React from "react";
-import { messages } from "../lib/data";
+import { messages } from "../data/data";
 
 const GridCard = () => {
   return (
@@ -11,15 +11,7 @@ const GridCard = () => {
       px={{ xs: 1, sm: 10 }}
     >
       {messages.map((message, index) => (
-        <Grid
-          key={index}
-          item
-          xs={12}
-          md={6}
-          display={"flex"}
-          alignItems={"center"}
-          justifyContent={"center"}
-        >
+        <Grid key={index} item xs={12} md={6}>
           <Box mx={1} mt={1} bgcolor={"#F8E0F1"} borderRadius={3}>
             <Box
               px={{ xs: 3, sm: 5 }}

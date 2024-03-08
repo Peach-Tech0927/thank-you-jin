@@ -1,6 +1,6 @@
 import { Grid, Box, Typography } from "@mui/material";
 import React from "react";
-import { messages } from "../lib/data";
+import { messages } from "../data/data";
 
 type TProps = {
   yearProps: string;
@@ -18,15 +18,7 @@ const YearGridCard: React.FC<TProps> = ({ yearProps, cardColor }) => {
       {messages
         .filter((message) => yearProps === message.year)
         .map((message, index) => (
-          <Grid
-            key={index}
-            item
-            xs={12}
-            md={6}
-            display={"flex"}
-            alignItems={"center"}
-            justifyContent={"center"}
-          >
+          <Grid key={index} item xs={12} md={6}>
             <Box mx={1} mt={1} bgcolor={cardColor} borderRadius={3}>
               <Box
                 px={{ xs: 3, sm: 5 }}
