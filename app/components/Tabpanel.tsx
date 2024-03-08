@@ -1,8 +1,8 @@
 "use client";
 import { Box, Tabs, Tab, styled } from "@mui/material";
-import * as React from "react";
 import GridCard from "./GridCard";
 import YearGridCard from "./YearGridCard";
+import React from "react";
 
 interface TabPanelProps {
   children?: React.ReactNode;
