@@ -47,9 +47,8 @@ const BasicTabs = () => {
           }}
         >
           <StyledTab label="一覧" color="#DE7897" />
-          <StyledTab label="24卒" color="#8161DE" />
           <StyledTab label="25卒" color="#2AA6CD" />
-          <StyledTab label="26卒" color="#F2821A" />
+          <StyledTab label="26卒" color="#8161DE" />
           <StyledTab label="27卒" color="#1CC033" />
         </Tabs>
       </Box>
@@ -57,15 +56,12 @@ const BasicTabs = () => {
         <GridCard />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        <YearGridCard yearProps="24卒" cardColor={"#E7DAF8"} />
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={2}>
         <YearGridCard yearProps="25卒" cardColor={"#D7EEFF"} />
       </CustomTabPanel>
-      <CustomTabPanel value={value} index={3}>
-        <YearGridCard yearProps="26卒" cardColor={"#F7D2BE"} />
+      <CustomTabPanel value={value} index={2}>
+        <YearGridCard yearProps="26卒" cardColor={"#E7DAF8"} />
       </CustomTabPanel>
-      <CustomTabPanel value={value} index={4}>
+      <CustomTabPanel value={value} index={3}>
         <YearGridCard yearProps="27卒" cardColor={"#D4EDD9"} />
       </CustomTabPanel>
     </Box>
