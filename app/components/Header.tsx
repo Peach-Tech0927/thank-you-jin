@@ -8,7 +8,7 @@ const Header = () => {
           component="h1"
           m={"0 auto"}
           color={"#DE7897"}
-          fontSize={33}
+          fontSize={{ xs: 25, sm: 33 }}
           fontFamily={"serif"}
         >
           Graduation Anniversary
