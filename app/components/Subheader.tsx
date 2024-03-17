@@ -63,6 +63,9 @@ const StyledBox = styled(Box)(({ theme }) => ({
   width: "100%",
   height: "80vh",
   zIndex: 0,
+  [theme.breakpoints.down("sm")]: {
+    height: "70vh",
+  },
   "&::before": {
     content: '""',
     position: "absolute",
