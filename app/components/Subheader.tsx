@@ -64,7 +64,7 @@ const StyledBox = styled(Box)(({ theme }) => ({
   height: "80vh",
   zIndex: 0,
   [theme.breakpoints.down("sm")]: {
-    height: "70vh",
+    height: "75vh",
   },
   "&::before": {
     content: '""',
